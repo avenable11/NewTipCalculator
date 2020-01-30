@@ -56,24 +56,26 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:id="@+id/percentUpButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="changePercent"
         android:text="@string/plus_symbol"
         app:layout_constraintBottom_toBottomOf="@+id/percent"
         app:layout_constraintEnd_toStartOf="@+id/percentDownButton"
         app:layout_constraintTop_toTopOf="@+id/percent" />
 
     <Button
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:id="@+id/percentDownButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="changePercent"
         android:text="@string/minus_symbol"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/percentUpButton" />
@@ -95,7 +97,7 @@
         app:prefixText="@string/currency_symbol">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tipText"
+            android:id="@+id/tipEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
@@ -120,7 +122,7 @@
         app:prefixText="@string/currency_symbol">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/total_text"
+            android:id="@+id/totalEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
@@ -130,7 +132,7 @@
 
     <Button
 
-        android:id="@+id/button3"
+        android:id="@+id/calculateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
