@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -26,7 +28,8 @@ public class TipCalculatorActivity extends AppCompatActivity {
     private EditText percentEditText;
     private float tipPercent = .15f;
     private SharedPreferences savedValues;
-    String billAmountString;
+    private String billAmountString;
+    private Spinner splitSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,13 @@ public class TipCalculatorActivity extends AppCompatActivity {
         });
 
         savedValues = getSharedPreferences("SavedValues", MODE_PRIVATE);
+        splitSpinner = findViewById(R.id.splitSpinner);
+        ArrayAdapter<CharSequence> adapter =
+                ArrayAdapter.createFromResource(this,R.array.split_array,
+                        android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        splitSpinner.setAdapter(adapter);
+        splitSpinner.setSelection(0);
     }
 
     @Override
@@ -100,7 +110,7 @@ public class TipCalculatorActivity extends AppCompatActivity {
 
     }
 
-    public void changePercent(View v) {
+    /*public void changePercent(View v) {
         switch (v.getId()) {
             case R.id.percentDownButton:
                 tipPercent = tipPercent - 0.01f;
@@ -111,7 +121,7 @@ public class TipCalculatorActivity extends AppCompatActivity {
                 calculateAndDisplay();
                 break;
         }
-    }
+    }*/
 
 
 }
