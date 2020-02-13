@@ -68,7 +68,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <SeekBar
-            android:id="@+id/seekBar"
+            android:id="@+id/tipSeek"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -143,18 +143,30 @@
             android:textColor="@android:color/tertiary_text_light" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Spinner
-        android:id="@+id/splitSpinner"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:hint="@string/split_bill_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tip" />
+        app:layout_constraintTop_toBottomOf="@+id/tip">
+
+        <Spinner
+            android:id="@+id/splitSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="0dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/total"
@@ -169,7 +181,7 @@
         android:hint="@string/total"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/splitSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:prefixText="@string/currency_symbol">
 
         <com.google.android.material.textfield.TextInputEditText
